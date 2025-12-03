@@ -9,7 +9,14 @@
       "Bash(pip install:*)",
       "Bash(git init:*)",
       "Bash(gh repo create:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(for i in 1 2 3 4 5)",
+      "Bash(do cp \"professional-$i.png\" \"professional-$i-smile.png\")",
+      "Bash(copy \"professional-$i.png\" \"professional-$i-smile.png\")",
+      "Bash(done)",
+      "Bash(copy \"hero-hiring-new.jpg\" \"hero-hiring.jpg\" /Y)"
     ],
     "deny": [],
     "ask": []
