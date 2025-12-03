@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initAnimations();
     initSignupDropdown();
+    initCTAAnimation();
 });
 
 /**
@@ -193,6 +194,34 @@ function initSignupDropdown() {
         item.addEventListener('click', function() {
             dropdown.classList.remove('open');
         });
+    });
+}
+
+/**
+ * CTA Section Animation
+ */
+function initCTAAnimation() {
+    const ctaLines = document.querySelectorAll('.cta-line');
+
+    if (!ctaLines.length) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    ctaLines.forEach(line => {
+        observer.observe(line);
     });
 }
 
