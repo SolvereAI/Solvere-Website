@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import "../lp-styles.css";
+import Footer from "../components/Footer";
 
 export default function UpskillPage() {
   const [headerHidden, setHeaderHidden] = useState(false);
@@ -1033,72 +1034,7 @@ export default function UpskillPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-brand">
-              <h3 className="footer-logo">SOLVERE</h3>
-              <p className="footer-tagline">Solve, Evolve, Solvere</p>
-              <div className="footer-contact-info">
-                <address className="footer-address">
-                  〒141-0022 東京都品川区東五反田5-22-33 TK池田山ビル2F
-                </address>
-                <a href="mailto:information@solvere.jp" className="footer-email">
-                  information@solvere.jp
-                </a>
-              </div>
-            </div>
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>会社情報</h4>
-                <ul>
-                  <li><a href="#">会社概要</a></li>
-                  <li><a href="#">採用情報</a></li>
-                  <li><a href="#">お問い合わせ</a></li>
-                  <li><a href="#">プレス</a></li>
-                </ul>
-              </div>
-              <div className="footer-column">
-                <h4>製品</h4>
-                <ul>
-                  <li><Link href="/upskill">Upskill</Link></li>
-                  <li><Link href="/bridge">Bridge</Link></li>
-                  <li><Link href="/assess">Assess</Link></li>
-                </ul>
-              </div>
-              <div className="footer-column">
-                <h4>ソリューション</h4>
-                <ul>
-                  <li><a href="#">学生向け</a></li>
-                  <li><a href="#">求職者向け</a></li>
-                  <li><a href="#">企業向け</a></li>
-                </ul>
-              </div>
-              <div className="footer-column">
-                <h4>リソース</h4>
-                <ul>
-                  <li><a href="#">最新情報</a></li>
-                  <li><a href="#">イベント</a></li>
-                  <li><a href="#">ヘルプ</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <div className="footer-legal">
-              <a href="#">プライバシーポリシー</a>
-              <span className="separator">•</span>
-              <a href="#">利用規約</a>
-              <span className="separator">•</span>
-              <a href="#">Cookieポリシー</a>
-            </div>
-            <p className="footer-copyright">
-              &copy; 2025 Solvere Corporation Inc.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

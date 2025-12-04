@@ -1622,6 +1622,12 @@ address {
     color: #FFFFFF;
 }
 
+.footer-link-disabled {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: default;
+}
+
 .footer-bottom {
     padding-top: var(--spacing-md);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -3141,7 +3147,6 @@ address {
 .journey-card:hover {
     background: #0d0d0d;
     border-color: #0d0d0d;
-    transform: translateY(-4px);
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
 }
 
@@ -3170,32 +3175,45 @@ address {
     height: 100%;
     text-align: center;
     justify-content: center;
+    align-items: center;
 }
 
 .journey-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
-    line-height: 1.4;
+    line-height: 1.5;
     transition: all 0.4s ease;
+    text-align: center;
+}
+
+.journey-card:hover .journey-content {
+    justify-content: center;
+    padding-top: 0;
 }
 
 .journey-card:hover .journey-title {
-    font-size: 1.25rem;
-    color: #ffffff;
+    display: none;
 }
 
 .journey-desc-detail {
-    font-size: 1.125rem;
-    line-height: 2;
+    font-size: 1rem;
+    line-height: 1.8;
     letter-spacing: 0.02em;
     color: transparent;
     margin-top: var(--spacing-md);
-    transition: color 0.4s ease;
+    transition: all 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
 }
 
 .journey-card:hover .journey-desc-detail {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.9);
+    max-height: 200px;
+    opacity: 1;
+    font-size: 1.25rem;
+    margin-top: 0;
 }
 
 /* Responsive for Journey */
@@ -3225,6 +3243,17 @@ address {
     /* Mobile: always show description */
     .journey-desc-detail {
         color: var(--color-text-muted);
+        max-height: none;
+        opacity: 1;
+    }
+
+    .journey-content {
+        justify-content: flex-start;
+        padding-top: 0;
+    }
+
+    .journey-title {
+        font-size: 1.25rem;
     }
 }
 
@@ -3373,6 +3402,16 @@ address {
     padding: var(--spacing-4xl) 0;
     background-color: var(--color-bg);
     text-align: center;
+}
+
+.product-cta-section.product-cta-minimal {
+    padding: var(--spacing-3xl) 0;
+    background-color: #ffffff;
+}
+
+.product-cta-section.product-cta-minimal .product-cta-title {
+    font-size: 2rem;
+    color: #0d0d0d;
 }
 
 .product-cta-title {
@@ -5341,5 +5380,1065 @@ address {
 
     .lp-wrapper .chart-label {
         font-size: 1.125rem;
+    }
+}
+
+/* ==========================================
+   Assess Page - New Styles
+   ========================================== */
+
+/* Framework Showcase */
+.lp-wrapper .framework-showcase {
+    margin-top: 60px;
+}
+
+.lp-wrapper .framework-showcase-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.lp-wrapper .framework-showcase-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+/* Framework Grid Dark */
+.lp-wrapper .framework-grid-dark {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.lp-wrapper .framework-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    transition: all 0.3s ease;
+}
+
+.lp-wrapper .framework-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.lp-wrapper .framework-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.lp-wrapper .framework-card-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+.lp-wrapper .framework-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lp-wrapper .framework-card-list li {
+    padding: 10px 0;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lp-wrapper .framework-card-list li:last-child {
+    border-bottom: none;
+}
+
+/* Framework Card Colors */
+.lp-wrapper .framework-card.framework-cognition {
+    border-top: 3px solid #3b82f6;
+}
+
+.lp-wrapper .framework-card.framework-influence {
+    border-top: 3px solid #22c55e;
+}
+
+.lp-wrapper .framework-card.framework-delivery {
+    border-top: 3px solid #f59e0b;
+}
+
+.lp-wrapper .framework-card.framework-coachability {
+    border-top: 3px solid #a855f7;
+}
+
+/* Comparison Showcase */
+.lp-wrapper .comparison-showcase {
+    margin-top: 60px;
+}
+
+.lp-wrapper .comparison-card {
+    background: #232323;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 0;
+}
+
+.lp-wrapper .comparison-card.comparison-before {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lp-wrapper .comparison-card.comparison-after {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.lp-wrapper .comparison-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lp-wrapper .comparison-before .comparison-card-title {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.lp-wrapper .comparison-after .comparison-card-title {
+    color: #22c55e;
+}
+
+/* Comparison Flow Horizontal */
+.lp-wrapper .comparison-flow-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lp-wrapper .comparison-flow-horizontal .flow-item {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+.lp-wrapper .comparison-flow-horizontal .flow-item-highlight {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.lp-wrapper .comparison-flow-horizontal .flow-item-highlight .flow-step-label,
+.lp-wrapper .comparison-flow-horizontal .flow-item-highlight .flow-step-benefit {
+    color: #ffffff;
+}
+
+.lp-wrapper .flow-step-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.lp-wrapper .flow-step-issue {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.lp-wrapper .flow-step-benefit {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.lp-wrapper .flow-arrow-icon {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+/* Comparison Divider */
+.lp-wrapper .comparison-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.lp-wrapper .divider-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 8px 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* Benefits Showcase */
+.lp-wrapper .benefits-showcase {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+}
+
+.lp-wrapper .benefit-card {
+    background: #232323;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lp-wrapper .benefit-card:hover {
+    background: #2a2a2a;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.lp-wrapper .benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 50%;
+    color: #22c55e;
+}
+
+.lp-wrapper .benefit-card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.lp-wrapper .benefit-card-desc {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Journey Grid 4 columns */
+.lp-wrapper .journey-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Journey Grid 6 columns */
+.lp-wrapper .journey-grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 24px;
+}
+
+.lp-wrapper .journey-grid-6 .journey-card {
+    padding: 32px 24px;
+    height: 220px;
+    z-index: 1;
+}
+
+.lp-wrapper .journey-grid-6 .journey-card:hover {
+    z-index: 10;
+}
+
+.lp-wrapper .journey-grid-6 .journey-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+.lp-wrapper .journey-grid-6 .journey-watermark {
+    font-size: 5rem;
+    bottom: -15px;
+    right: -10px;
+}
+
+.lp-wrapper .journey-grid-6 .journey-title {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+
+.lp-wrapper .journey-grid-6 .journey-desc-detail {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+}
+
+/* Framework Simple - シンプルな評価軸デザイン */
+.lp-wrapper .framework-simple {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.lp-wrapper .framework-simple-item {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
+
+.lp-wrapper .framework-simple-item:hover {
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.lp-wrapper .framework-simple-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.lp-wrapper .framework-simple-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.lp-wrapper .framework-icon-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.lp-wrapper .framework-icon-green {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.lp-wrapper .framework-icon-orange {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.lp-wrapper .framework-icon-purple {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+}
+
+.lp-wrapper .framework-simple-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 4px 0;
+}
+
+.lp-wrapper .framework-simple-label {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 0;
+}
+
+.lp-wrapper .framework-simple-desc {
+    font-size: 0.9375rem;
+    color: #4A5565;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Knowhow Cards - 3カラムカード */
+.lp-wrapper .knowhow-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.lp-wrapper .knowhow-card {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 36px 32px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.lp-wrapper .knowhow-card:hover {
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: #e5e7eb;
+}
+
+.lp-wrapper .knowhow-number {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #2B2B2B;
+    background: #e5e7eb;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.lp-wrapper .knowhow-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+}
+
+.lp-wrapper .knowhow-desc {
+    font-size: 0.9375rem;
+    color: #4A5565;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Report Showcase */
+.lp-wrapper .report-showcase {
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.lp-wrapper .report-showcase-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.lp-wrapper .report-showcase-text {
+    order: 1;
+}
+
+.lp-wrapper .report-showcase-image {
+    order: 2;
+}
+
+.lp-wrapper .report-showcase-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+}
+
+.lp-wrapper .report-showcase-desc {
+    font-size: 1rem;
+    color: #4A5565;
+    line-height: 1.8;
+    margin: 0 0 28px 0;
+}
+
+.lp-wrapper .report-showcase-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lp-wrapper .report-showcase-points li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 0.9375rem;
+    color: #4A5565;
+    line-height: 1.6;
+}
+
+.lp-wrapper .report-showcase-points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #2B2B2B;
+    border-radius: 50%;
+}
+
+.lp-wrapper .report-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Performance Insight Section */
+.lp-wrapper .performance-insight {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.lp-wrapper .performance-chart-container {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 36px;
+}
+
+.lp-wrapper .performance-chart-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 8px 0;
+}
+
+.lp-wrapper .performance-chart-source {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    margin: 0 0 32px 0;
+}
+
+.lp-wrapper .performance-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lp-wrapper .chart-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lp-wrapper .chart-label {
+    width: 120px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    flex-shrink: 0;
+    line-height: 1.3;
+}
+
+.lp-wrapper .chart-label small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+.lp-wrapper .chart-bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lp-wrapper .chart-bar {
+    height: 32px;
+    border-radius: 6px;
+    transition: width 0.6s ease;
+}
+
+.lp-wrapper .chart-bar-high {
+    background: #2B2B2B;
+}
+
+.lp-wrapper .chart-bar-medium {
+    background: #6B7280;
+}
+
+.lp-wrapper .chart-bar-low {
+    background: #D1D5DB;
+}
+
+.lp-wrapper .chart-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #374151;
+    min-width: 40px;
+}
+
+.lp-wrapper .performance-insight-box {
+    margin-top: 28px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border-left: 4px solid #2B2B2B;
+}
+
+.lp-wrapper .performance-insight-box .quote-en {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #2B2B2B;
+    font-style: italic;
+    margin: 0 0 4px 0;
+    line-height: 1.5;
+}
+
+.lp-wrapper .performance-insight-box .quote-author {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 0 0 12px 0;
+}
+
+.lp-wrapper .performance-insight-box .quote-ja {
+    font-size: 0.9375rem;
+    color: #4A5565;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.lp-wrapper .performance-insight-box p {
+    font-size: 0.9375rem;
+    color: #374151;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.lp-wrapper .performance-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.lp-wrapper .benefit-item-simple {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.lp-wrapper .benefit-icon-simple {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2B2B2B;
+    flex-shrink: 0;
+}
+
+.lp-wrapper .benefit-icon-simple svg {
+    width: 28px;
+    height: 28px;
+}
+
+.lp-wrapper .benefit-item-simple h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 6px 0;
+}
+
+.lp-wrapper .benefit-item-simple p {
+    font-size: 1.125rem;
+    color: #4A5565;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive - Assess Page New Styles */
+@media (max-width: 1200px) {
+    .lp-wrapper .framework-grid-dark {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lp-wrapper .benefits-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lp-wrapper .journey-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lp-wrapper .journey-grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
+    }
+
+    .lp-wrapper .knowhow-cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .lp-wrapper .report-showcase-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .lp-wrapper .report-showcase-image {
+        order: 1;
+    }
+
+    .lp-wrapper .report-showcase-text {
+        order: 2;
+    }
+
+    .lp-wrapper .performance-insight {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lp-wrapper .framework-grid-dark {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-wrapper .framework-card {
+        padding: 24px 20px;
+    }
+
+    .lp-wrapper .comparison-card {
+        padding: 24px;
+    }
+
+    .lp-wrapper .comparison-flow-horizontal {
+        flex-direction: column;
+    }
+
+    .lp-wrapper .flow-arrow-icon {
+        transform: rotate(90deg);
+    }
+
+    .lp-wrapper .benefits-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-wrapper .journey-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-wrapper .journey-grid-6 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .lp-wrapper .framework-showcase-title {
+        font-size: 1.25rem;
+    }
+
+    .lp-wrapper .framework-showcase-subtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .lp-wrapper .framework-simple {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-wrapper .framework-simple-item {
+        padding: 20px;
+    }
+
+    .lp-wrapper .knowhow-card {
+        padding: 28px 24px;
+    }
+
+    .lp-wrapper .knowhow-title {
+        font-size: 1.125rem;
+    }
+
+    .lp-wrapper .report-showcase {
+        margin-top: 48px;
+        padding-top: 48px;
+    }
+
+    .lp-wrapper .report-showcase-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   Process Replacement Diagram - Feature 04
+   Monochrome design with white/gray on black
+   ============================================ */
+
+.lp-wrapper .process-replacement-diagram {
+    max-width: 1000px;
+    margin: 0 auto 64px;
+    padding: 48px 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+.lp-wrapper .process-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.lp-wrapper .process-row:last-child {
+    margin-bottom: 0;
+}
+
+.lp-wrapper .process-row-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    width: 80px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.lp-wrapper .process-boxes {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    flex: 1;
+}
+
+/* Pattern 2: Same grid structure, items placed via inline styles */
+.lp-wrapper .process-boxes-pattern2 {
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+}
+
+.lp-wrapper .process-box {
+    padding: 24px 16px;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lp-wrapper .process-box-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #fff;
+    display: block;
+}
+
+.lp-wrapper .process-box-subtext {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 4px;
+    display: block;
+}
+
+/* Replace target boxes - dashed border to indicate replacement */
+.lp-wrapper .process-box-replace {
+    background: transparent;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.lp-wrapper .process-box-replace .process-box-text {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Keep boxes - solid subtle */
+.lp-wrapper .process-box-keep {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Solvere Assess box - highlighted with white */
+.lp-wrapper .process-box-solvere {
+    background: #fff;
+    border: none;
+}
+
+.lp-wrapper .process-box-solvere .process-box-text {
+    color: #0d0d0d;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.lp-wrapper .process-arrow {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+/* Pattern block for flow diagram */
+.lp-wrapper .process-pattern-block {
+    margin-bottom: 0;
+}
+
+.lp-wrapper .process-pattern-block .process-row {
+    padding-left: 104px; /* 80px label width + 24px gap */
+    margin-bottom: 0;
+}
+
+.lp-wrapper .process-pattern-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.lp-wrapper .pattern-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+}
+
+.lp-wrapper .pattern-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.lp-wrapper .pattern-description {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0 0 24px 0;
+}
+
+/* Flow section divider */
+.lp-wrapper .flow-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 40px 0;
+}
+
+/* Benefits section - simplified monochrome */
+.lp-wrapper .replacement-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lp-wrapper .replacement-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.lp-wrapper .replacement-benefit-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.15);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.lp-wrapper .replacement-benefit-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.lp-wrapper .replacement-benefit-content p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lp-wrapper .process-replacement-diagram {
+        padding: 32px 20px;
+    }
+
+    .lp-wrapper .process-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .lp-wrapper .process-row-label {
+        width: auto;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .lp-wrapper .process-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .lp-wrapper .process-boxes-pattern2 {
+        display: flex;
+    }
+
+    .lp-wrapper .process-boxes-pattern2 .process-box-double,
+    .lp-wrapper .process-boxes-pattern2 .process-box-keep,
+    .lp-wrapper .process-boxes-pattern2 .process-arrow {
+        grid-column: auto;
+    }
+
+    .lp-wrapper .process-box {
+        flex: 1 1 calc(50% - 30px);
+        min-width: auto;
+        padding: 16px 12px;
+        min-height: 60px;
+    }
+
+    .lp-wrapper .process-box-double {
+        flex: 1 1 100%;
+    }
+
+    .lp-wrapper .process-box-text {
+        font-size: 1rem;
+    }
+
+    .lp-wrapper .process-arrow {
+        font-size: 1.25rem;
+    }
+
+    .lp-wrapper .process-pattern-block .process-row {
+        padding-left: 0;
+    }
+
+    .lp-wrapper .process-pattern-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .lp-wrapper .pattern-badge {
+        padding: 6px 12px;
+        font-size: 0.875rem;
+    }
+
+    .lp-wrapper .pattern-title {
+        font-size: 1.125rem;
+    }
+
+    .lp-wrapper .pattern-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .lp-wrapper .flow-divider {
+        margin: 24px 0;
+    }
+
+    .lp-wrapper .replacement-benefits {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .lp-wrapper .replacement-benefit-item {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+    }
+
+    .lp-wrapper .replacement-benefit-content h4 {
+        font-size: 1.125rem;
+    }
+
+    .lp-wrapper .replacement-benefit-content p {
+        font-size: 1rem;
     }
 }
