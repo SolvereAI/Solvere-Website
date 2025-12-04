@@ -11,6 +11,7 @@ export default function LandingPage() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [signupDropdownOpen, setSignupDropdownOpen] = useState(false);
+  const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
 
   // Header scroll behavior
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function LandingPage() {
       const currentScrollY = window.scrollY;
 
       setHeaderScrolled(currentScrollY > 50);
+      setScrollIndicatorHidden(currentScrollY > 100);
 
       if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
         setHeaderHidden(true);
@@ -237,98 +239,18 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero hero-minimal">
         <div className="hero-content">
-          <p className="product-label">Our Mission</p>
-          <h1 className="product-title">
-            Advancing Problem Solving to unleash potential
+          <p className="hero-label">Our Mission</p>
+          <h1 className="hero-headline">
+            <span className="hero-headline-main">Advancing</span>
+            <span className="hero-headline-main">Problem Solving</span>
+            <span className="hero-headline-accent">to unleash potential</span>
           </h1>
-          <p className="product-tagline">問題解決の力で未来を切り拓く</p>
+          <p className="hero-tagline-jp">問題解決の力で未来を切り拓く</p>
         </div>
-        <div className="hero-visual">
-          <img
-            src="/lp-images/hero-main.jpg"
-            alt="Solvere AI面接システム"
-            className="hero-image"
-          />
-          <div className="hero-menu">
-            <a
-              href="#services"
-              className="hero-menu-item"
-              onClick={(e) => handleAnchorClick(e, "#services")}
-            >
-              問題解決力をきたえる
-            </a>
-            <a
-              href="#services"
-              className="hero-menu-item"
-              onClick={(e) => handleAnchorClick(e, "#services")}
-            >
-              問題解決力を見極める
-            </a>
-            <a
-              href="#services"
-              className="hero-menu-item"
-              onClick={(e) => handleAnchorClick(e, "#services")}
-            >
-              問題解決力でつながる
-            </a>
-          </div>
-        </div>
-        <div className="hero-features">
-          <div className="hero-features-grid">
-            <div className="hero-feature-card">
-              <span className="hero-feature-tag">採用･選考</span>
-              <h3 className="hero-feature-heading">
-                問題解決力を見抜く鋭い問いノウハウを活用した評価システム
-              </h3>
-              <div className="hero-feature-image">
-                <img src="/lp-images/hero-hiring.jpg" alt="採用・選考システム" />
-              </div>
-              <div className="hero-feature-text">
-                <p>
-                  戦略コンサルティングファームで実践されているケース面接をAIで再現。
-                  <br />
-                  熟練コンサルタントが限られた時間で候補者の本質を見抜く「問いの技術」を
-                  <br />
-                  最先端AIを活用した対話システム構築により提供します。
-                </p>
-                <p>
-                  30分間の面接の中で、複数テーマを多角的に議論しながら、
-                  <br />
-                  候補者のポテンシャルを引きだし、問題解決力を正確に評価します。
-                </p>
-              </div>
-            </div>
-            <div className="hero-feature-card">
-              <span className="hero-feature-tag">研修･育成</span>
-              <h3 className="hero-feature-heading">
-                問題解決力を伸ばすノウハウを凝縮したフィードバックシステム
-              </h3>
-              <div className="hero-feature-image">
-                <img
-                  src="/lp-images/hero-training.jpg"
-                  alt="研修・育成システム"
-                />
-              </div>
-              <div className="hero-feature-text">
-                <p>
-                  戦略コンサルティングファームのコーチングのメカニズムをAIで再現。
-                  <br />
-                  プロフェッショナルの根幹となるのは
-                  <br />
-                  「考える力、人を動かす力、やり抜く力、学び変わり続ける力」です。
-                </p>
-                <p>
-                  Solvereでは、これらの4つの力を定量的にスコア化することにこだわり、
-                  <br />
-                  現状把握と改善点の提示に加え、トップパフォーマーの思考法を示すことで
-                  <br />
-                  成長への明確な道筋を提供、あなたのポテンシャルを最大化します。
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className={`hero-scroll-indicator ${scrollIndicatorHidden ? "hidden" : ""}`}>
+          <span></span>
         </div>
       </section>
 
@@ -641,33 +563,9 @@ export default function LandingPage() {
             3つのサービスラインを通じてアプローチし、採用と選考の在り方を変革することを目指します
           </p>
 
-          {/* Professionals Gallery */}
-          <div className="professionals-gallery">
-            <div className="professional-card">
-              <div className="professional-photo">
-                <img src="/lp-images/Professional_1.png" alt="Professional 1" />
-              </div>
-            </div>
-            <div className="professional-card">
-              <div className="professional-photo">
-                <img src="/lp-images/Professional_2.png" alt="Professional 2" />
-              </div>
-            </div>
-            <div className="professional-card">
-              <div className="professional-photo">
-                <img src="/lp-images/Professional_3.png" alt="Professional 3" />
-              </div>
-            </div>
-            <div className="professional-card">
-              <div className="professional-photo">
-                <img src="/lp-images/Professional_4.png" alt="Professional 4" />
-              </div>
-            </div>
-            <div className="professional-card">
-              <div className="professional-photo">
-                <img src="/lp-images/Professional_5.png" alt="Professional 5" />
-              </div>
-            </div>
+          {/* Services Hero Image */}
+          <div className="services-hero-image">
+            <img src="/lp-images/hero-main.jpg" alt="Solvere AI面接システム" />
           </div>
 
           <div className="service-card">
