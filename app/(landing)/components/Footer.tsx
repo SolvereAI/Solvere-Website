@@ -21,32 +21,24 @@ export default function Footer() {
           </div>
           <div className="footer-links">
             <div className="footer-column">
-              <h4>会社情報</h4>
+              <h4>Company</h4>
               <ul>
-                <li><span className="footer-link-disabled">会社概要</span></li>
-                <li><span className="footer-link-disabled">採用情報</span></li>
-                <li><span className="footer-link-disabled">お問い合わせ</span></li>
-                <li><span className="footer-link-disabled">プレス</span></li>
+                <li><Link href="/#philosophy">Our Philosophy</Link></li>
+                <li><Link href="/#who-we-are">Who We Are</Link></li>
+                <li><Link href="/#corporate">Overview</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
             <div className="footer-column">
-              <h4>製品</h4>
+              <h4>Products</h4>
               <ul>
-                <li><Link href="/upskill">Upskill</Link></li>
-                <li><Link href="/bridge">Bridge</Link></li>
-                <li><Link href="/assess">Assess</Link></li>
+                <li><span className="footer-link-disabled">Upskill</span></li>
+                <li><span className="footer-link-disabled">Bridge</span></li>
+                <li><span className="footer-link-disabled">Assess</span></li>
               </ul>
             </div>
             <div className="footer-column">
-              <h4>ソリューション</h4>
-              <ul>
-                <li><span className="footer-link-disabled">学生向け</span></li>
-                <li><span className="footer-link-disabled">求職者向け</span></li>
-                <li><span className="footer-link-disabled">企業向け</span></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4>リソース</h4>
+              <h4>Resources</h4>
               <ul>
                 <li><span className="footer-link-disabled">最新情報</span></li>
                 <li><span className="footer-link-disabled">イベント</span></li>
@@ -57,14 +49,12 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <div className="footer-legal">
-            <span className="footer-link-disabled">プライバシーポリシー</span>
+            <Link href="/privacy" className="footer-legal-link">プライバシーポリシー</Link>
             <span className="separator">•</span>
-            <span className="footer-link-disabled">利用規約</span>
-            <span className="separator">•</span>
-            <span className="footer-link-disabled">Cookieポリシー</span>
+            <Link href="/security" className="footer-legal-link">情報セキュリティ方針</Link>
           </div>
           <p className="footer-copyright">
-            &copy; 2025 Solvere Corporation Inc.
+            &copy; 2025 Solvere Corporation
           </p>
         </div>
       </div>
