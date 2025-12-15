@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import "../lp-styles.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

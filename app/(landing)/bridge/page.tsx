@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import "../lp-styles.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

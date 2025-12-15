@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import "../lp-styles.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -200,7 +199,7 @@ export default function AssessPage() {
               </div>
               <div className="report-showcase-image">
                 <img
-                  src="/lp-images/report.png"
+                  src="/images/report.png"
                   alt="AI Interview Evaluation Report"
                   className="report-image"
                 />
@@ -228,7 +227,7 @@ export default function AssessPage() {
               <div className="pc-mockup">
                 <div className="pc-screen">
                   <img
-                    src="/lp-images/hero-main.jpg"
+                    src="/images/hero-main.jpg"
                     alt="3Dアバターを使用したAI面接画面"
                   />
                 </div>

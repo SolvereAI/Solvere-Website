@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import "./lp-styles.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -312,7 +311,7 @@ export default function LandingPage() {
 
           {/* Services Hero Image */}
           <div className="services-hero-image">
-            <img src="/lp-images/hero-main.jpg" alt="Solvere AI面接システム" />
+            <img src="/images/hero-main.jpg" alt="Solvere AI面接システム" />
           </div>
 
           <div className="service-card">
@@ -426,7 +425,7 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="solvere-logo-large">
-            <img src="/lp-images/Logo.png" alt="SOLVERE" />
+            <img src="/images/logo.png" alt="SOLVERE" />
           </div>
           <div className="who-content">
             <p>

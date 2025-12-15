@@ -1,5 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "SOLVERE - 問題解決の力で未来を切り拓く",

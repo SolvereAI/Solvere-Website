@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import "../lp-styles.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -165,7 +164,7 @@ export default function UpskillPage() {
           <div className="video-demo-section">
             <div className="video-thumbnail">
               <img
-                src="/lp-images/hero-main.jpg"
+                src="/images/hero-main.jpg"
                 alt="AIケース面接 デモ動画"
               />
               <div className="video-play-button">
@@ -282,7 +281,7 @@ export default function UpskillPage() {
               <div className="pc-mockup">
                 <div className="pc-screen">
                   <img
-                    src="/lp-images/upskill-1.png"
+                    src="/images/upskill-1.png"
                     alt="Performance Overview - 総合スコアとパフォーマンス概要画面"
                   />
                 </div>
@@ -309,7 +308,7 @@ export default function UpskillPage() {
               <div className="pc-mockup">
                 <div className="pc-screen">
                   <img
-                    src="/lp-images/upskill-3.png"
+                    src="/images/upskill-3.png"
                     alt="Score Breakdown - 3軸×多項目の詳細評価画面"
                   />
                 </div>
@@ -336,7 +335,7 @@ export default function UpskillPage() {
               <div className="pc-mockup">
                 <div className="pc-screen">
                   <img
-                    src="/lp-images/upskill-4.png"
+                    src="/images/upskill-4.png"
                     alt="Comparison & Suggested Studies - Peer比較と学習推奨画面"
                   />
                 </div>
@@ -674,7 +673,7 @@ export default function UpskillPage() {
               <div className="pc-mockup">
                 <div className="pc-screen">
                   <img
-                    src="/lp-images/Scount_Inbox.png"
+                    src="/images/scout-inbox.png"
                     alt="Scout Inbox - 企業からのスカウトメッセージ"
                   />
                 </div>
